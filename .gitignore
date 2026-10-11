@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+# Local-only dev artifacts (real model paths specific to one machine)
+*.local
+tool_test_output.json
+tool_test_output.html
