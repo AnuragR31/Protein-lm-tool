@@ -293,7 +293,6 @@
         </data>
     </outputs>
     <tests>
-        <!-- embed mode, preinstalled route, one test per model family -->
         <test expect_num_outputs="1">
             <conditional name="mode">
                 <param name="mode_select" value="embed"/>
@@ -360,7 +359,6 @@
             </output>
         </test>
 
-        <!-- embed mode, upload route -->
         <test expect_num_outputs="1">
             <conditional name="mode">
                 <param name="mode_select" value="embed"/>
@@ -381,7 +379,6 @@
             </output>
         </test>
 
-        <!-- predict mode: classification train/test (labelled test data -> metrics + plot) -->
         <test expect_num_outputs="3">
             <conditional name="mode">
                 <param name="mode_select" value="predict"/>
@@ -421,7 +418,6 @@
             </output>
         </test>
 
-        <!-- predict mode: regression train/test -->
         <test expect_num_outputs="3">
             <conditional name="mode">
                 <param name="mode_select" value="predict"/>
@@ -461,7 +457,6 @@
             </output>
         </test>
 
-        <!-- finetune mode: classification, LoRA on all layers -->
         <test expect_num_outputs="4">
             <conditional name="mode">
                 <param name="mode_select" value="finetune"/>
@@ -503,7 +498,6 @@
             </output>
         </test>
 
-        <!-- finetune mode: regression, LoRA on the last layer only -->
         <test expect_num_outputs="4">
             <conditional name="mode">
                 <param name="mode_select" value="finetune"/>
@@ -536,7 +530,6 @@
             </conditional>
         </test>
 
-        <!-- finetune mode: classification, AdaLoRA with custom layer indices -->
         <test expect_num_outputs="4">
             <conditional name="mode">
                 <param name="mode_select" value="finetune"/>
@@ -575,7 +568,6 @@
             </output>
         </test>
 
-        <!-- failure: unknown preinstalled model (no_options validator) -->
         <test expect_failure="true">
             <conditional name="mode">
                 <param name="mode_select" value="embed"/>
@@ -588,7 +580,6 @@
             </conditional>
         </test>
 
-        <!-- failure: invalid (non-tar) uploaded archive -->
         <test expect_failure="true" expect_exit_code="3">
             <conditional name="mode">
                 <param name="mode_select" value="embed"/>
@@ -604,7 +595,6 @@
             </assert_stderr>
         </test>
 
-        <!-- failure: FASTA/labels ID mismatch -->
         <test expect_failure="true" expect_exit_code="6">
             <conditional name="mode">
                 <param name="mode_select" value="predict"/>

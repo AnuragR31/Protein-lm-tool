@@ -125,7 +125,7 @@ def load_model(model_dir: str) -> tuple[str, PreTrainedTokenizerBase, PreTrained
     elif family == "protbert":
         tokenizer = BertTokenizer.from_pretrained(model_dir, do_lower_case=False, **common)
         model = BertModel.from_pretrained(model_dir, **common)
-    else:  # prott5
+    else:
         tokenizer = T5Tokenizer.from_pretrained(model_dir, do_lower_case=False, **common)
         model = T5EncoderModel.from_pretrained(model_dir, **common)
 

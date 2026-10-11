@@ -58,7 +58,6 @@ def resolve_layers_to_transform(scope: str, last_n: int, custom_layers: str, num
                 exit_code=7,
             )
         return list(range(num_layers - last_n, num_layers))
-    # custom
     try:
         layers = sorted({int(x.strip()) for x in custom_layers.split(",") if x.strip()})
     except ValueError:

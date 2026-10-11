@@ -59,7 +59,7 @@ def filter_by_length(ids, seqs, max_length: int, on_long: str):
             continue
         if on_long == "skip":
             warnings.append(f"Skipped '{seq_id}': length {len(seq)} exceeds max_length budget {budget}.")
-        else:  # truncate
+        else:
             kept_ids.append(seq_id)
             kept_seqs.append(seq[:budget])
             warnings.append(f"Truncated '{seq_id}' from length {len(seq)} to {budget}.")
